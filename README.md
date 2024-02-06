@@ -48,7 +48,7 @@ pnpm login
 3. Run the following command to publish the package to npm:
 
 ```bash
-pnpm run publish
+pnpm run build-and-publish
 ```
 
 4. Your package should now be published to npm and available for others to install.

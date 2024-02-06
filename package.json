@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "publish": "pnpm run build && pnpm version patch && pnpm publish"
+    "build-and-publish": "pnpm run build && pnpm version patch && pnpm publish && git push"
   },
   "keywords": [
     "typescript",
