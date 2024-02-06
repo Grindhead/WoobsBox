@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  '@2toad/profanity':
+    specifier: ^2.2.0
+    version: 2.2.0
+
 devDependencies:
   '@types/node':
     specifier: ^20.11.0
@@ -13,6 +18,11 @@ devDependencies:
     version: 5.3.3
 
 packages:
+
+  /@2toad/profanity@2.2.0:
+    resolution: {integrity: sha512-EDoqDFFkw3g11xIHMQI4L91G+PT6OHrAHvwi+oxbYBH06G7EFrWVva+r604uscEPDZR4h+GrvVqkTD0g8JzZgg==}
+    engines: {node: '>=12'}
+    dev: false
 
   /@types/node@20.11.0:
     resolution: {integrity: sha512-o9bjXmDNcF7GbM4CNQpmi+TutCgap/K3w1JyKgxAjqx41zp9qlIAVFi0IhCNsJcXolEqLWhbFbEeL0PvYm4pcQ==}
