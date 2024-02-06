@@ -23,6 +23,12 @@ pnpm run build
 
 ## How to Use
 
+Install using
+
+```bash
+pnpm i woobsbox
+```
+
 To use WoobsBox in your project, you can import the individual utility functions as needed. For example:
 
 ```typescript
