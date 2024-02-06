@@ -1,13 +1,13 @@
 {
   "name": "woobsbox",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Collection of Typescript utility modules to ease development",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "publish": "npm run build && cd dist && npm publish && cd .."
+    "publish": "pnpm version patch && pnpm run build && pnpm publish"
   },
   "keywords": [
     "typescript",

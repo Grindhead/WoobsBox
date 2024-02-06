@@ -7,6 +7,9 @@ exports.removeYPositionListeners = exports.setYPositionWithOffset = void 0;
  * @param yOffsetPercent - The Y offset as a percentage of the screen height.
  */
 const setYPositionWithOffset = (elementSelector, yOffsetPercent) => {
+    /**
+     * @type {HTMLElement | null} targetElement - The target HTML element.
+     */
     const targetElement = document.querySelector(elementSelector);
     if (targetElement) {
         const yPosPixels = window.innerHeight * (yOffsetPercent / 100);
@@ -17,9 +20,12 @@ const setYPositionWithOffset = (elementSelector, yOffsetPercent) => {
     window.addEventListener("resize", () => (0, exports.setYPositionWithOffset)(".example-element", yOffsetPercent));
 };
 exports.setYPositionWithOffset = setYPositionWithOffset;
+/**
+ * Removes the event listeners added by setYPositionWithOffset.
+ */
 const removeYPositionListeners = () => {
-    window.removeEventListener("load", () => exports.setYPositionWithOffset);
-    window.removeEventListener(".example-element", () => exports.setYPositionWithOffset);
+    window.removeEventListener("load", () => (0, exports.setYPositionWithOffset)(".example-element", 0));
+    window.removeEventListener("resize", () => (0, exports.setYPositionWithOffset)(".example-element", 0));
 };
 exports.removeYPositionListeners = removeYPositionListeners;
 //# sourceMappingURL=setYPositionWithOffset.js.map
