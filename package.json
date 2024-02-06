@@ -1,6 +1,6 @@
 {
   "name": "woobsbox",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Collection of Typescript utility modules to ease development",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
