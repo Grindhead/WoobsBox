@@ -4,9 +4,8 @@
  *
  * @param elementName - The selector for the element to be centered (e.g., '.my-element').
  */
-export const centerElement = (elementName: string) => {
+export const centerElement = (elementName: string): void => {
   const element = document.querySelector(elementName) as HTMLElement;
-  console.log(element);
   if (element) {
     const xCenter = (window.innerWidth - element.offsetWidth) / 2;
     const yCenter = (window.innerHeight - element.offsetHeight) / 2;
@@ -15,15 +14,14 @@ export const centerElement = (elementName: string) => {
     element.style.top = `${yCenter}px`;
   }
 
-  window.addEventListener('load', () => centerElement(elementName));
-  window.addEventListener('resize', () => centerElement(elementName));
+  window.addEventListener("load", () => centerElement(elementName));
+  window.addEventListener("resize", () => centerElement(elementName));
 };
 
 /**
  * Removes any listeners that center the element
- * @param elementName The selector for the element to be centered (e.g., '.my-element').
  */
-export const removeCenterListeners = (elementName: string) => {
-  window.removeEventListener('load', () => centerElement(elementName));
-  window.removeEventListener('resize', () => centerElement(elementName));
+export const removeCenterListeners = (): void => {
+  window.removeEventListener("load", () => centerElement);
+  window.removeEventListener("resize", () => centerElement);
 };

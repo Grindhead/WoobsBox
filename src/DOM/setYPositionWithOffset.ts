@@ -7,9 +7,6 @@ export const setYPositionWithOffset = (
   elementSelector: string,
   yOffsetPercent: number
 ): void => {
-  /**
-   * @type {HTMLElement | null} targetElement - The target HTML element.
-   */
   const targetElement = document.querySelector(
     elementSelector
   ) as HTMLElement | null;
@@ -20,6 +17,7 @@ export const setYPositionWithOffset = (
     targetElement.style.top = `${yPosPixels}px`;
   }
 
+  // Add event listeners to reposition the element on window load and resize
   window.addEventListener("load", () =>
     setYPositionWithOffset(".example-element", yOffsetPercent)
   );
@@ -29,13 +27,9 @@ export const setYPositionWithOffset = (
 };
 
 /**
- * Removes the event listeners added by setYPositionWithOffset.
+ * Removes any listeners that reposition the element
  */
-export const removeYPositionListeners = () => {
-  window.removeEventListener("load", () =>
-    setYPositionWithOffset(".example-element", 0)
-  );
-  window.removeEventListener("resize", () =>
-    setYPositionWithOffset(".example-element", 0)
-  );
+export const removeYPositionListeners = (): void => {
+  window.removeEventListener("load", () => setYPositionWithOffset);
+  window.removeEventListener("resize", () => setYPositionWithOffset);
 };
