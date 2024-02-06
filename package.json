@@ -4,16 +4,10 @@
   "description": "Collection of Typescript utility modules to ease development",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "dist/index.esm.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
-    }
-  },
+  "module": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json -m ESNext",
     "build-and-publish": "pnpm run build && pnpm version patch && pnpm publish && git push"
   },
   "keywords": [
